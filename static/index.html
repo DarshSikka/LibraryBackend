@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM TESTING</title>
+</head>
+<body>
+    <script>
+    fetch("/signup", {method:"POST", headers:{
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+        username:"Darsh", 
+        email:"darsh7349@killmail.c",
+        password:"darsh",
+        confirm:"darsh"
+    }) //bruh restart
+    }).then(res=>res.json()).then(resul=>console.log(resul))
+    </script> 
+</body>
+</html>
