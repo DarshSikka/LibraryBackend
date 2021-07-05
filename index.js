@@ -41,6 +41,19 @@ app.post("/signup", (req, res)=>{
          }
      })
  }
+}); 
+app.post("/login", (req, res)=>{
+const {email, password}=req.body;
+console.log(req.body);
+db.all(`SELECT * FROM users WHERE email=? AND PASSWORD=?`,[email, password], (err, rows)=>{
+    if(err) throw err;
+    if(rows.length===0){
+        return res.send({message:"Invalid Email/Password"})
+    }
+    else{
+        return res.send(({message:"Authorized"}));
+    }
+})
 })
 
 

@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        function signup(){
     fetch("/signup", {method:"POST", headers:{
         'Content-Type': 'application/json'
     },
@@ -18,6 +19,16 @@
         confirm:"darsh"
     }) //bruh restart
     }).then(res=>res.json()).then(resul=>console.log(resul))
+}
+    fetch("/login", {method:"POST", headers:{
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+        email:"darsh7349@killmail.c",
+        password:"darsh"
+    })
+    }).then(res=>res.json()).then(resul=>console.log(resul));
+
     </script> 
 </body>
 </html>
